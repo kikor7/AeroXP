@@ -1087,3 +1087,42 @@ button.VoiceToggle.Active svg {
     top: 10px !important;
     font-weight: 700;
 }
+
+/* Allow dragging the Steam Messenger window from its black title bar. */
+html.client_chat_frame .TitleBar.title-area.chatTitleBar,
+html.web_chat_frame .TitleBar.title-area.chatTitleBar {
+    -webkit-app-region: drag !important;
+}
+
+html.client_chat_frame .title-bar-actions.window-controls,
+html.web_chat_frame .title-bar-actions.window-controls,
+html.client_chat_frame .title-area-icon.windowControlButton,
+html.web_chat_frame .title-area-icon.windowControlButton {
+    -webkit-app-region: no-drag !important;
+}
+/* Extend the draggable area across the complete black title bar. */
+html.client_chat_frame .TitleBar.title-area.chatTitleBar,
+html.web_chat_frame .TitleBar.title-area.chatTitleBar {
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+/* The ChatTabs header spans the window; use it as the full-width drag surface. */
+html.client_chat_frame .titleBarContainer.ChatTabs,
+html.web_chat_frame .titleBarContainer.ChatTabs {
+    -webkit-app-region: drag !important;
+}
+
+html.client_chat_frame .titleBarContainer.ChatTabs .chatTabSetContainer,
+html.web_chat_frame .titleBarContainer.ChatTabs .chatTabSetContainer,
+html.client_chat_frame .titleBarContainer.ChatTabs .title-bar-actions,
+html.web_chat_frame .titleBarContainer.ChatTabs .title-bar-actions,
+html.client_chat_frame .titleBarContainer.ChatTabs .title-area-icon,
+html.web_chat_frame .titleBarContainer.ChatTabs .title-area-icon,
+html.client_chat_frame .titleBarContainer.ChatTabs button,
+html.web_chat_frame .titleBarContainer.ChatTabs button,
+html.client_chat_frame .titleBarContainer.ChatTabs input,
+html.web_chat_frame .titleBarContainer.ChatTabs input {
+    -webkit-app-region: no-drag !important;
+}
